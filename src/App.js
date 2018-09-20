@@ -17,7 +17,10 @@ import logo from './logo.png';
 import './App.css';
 
 const HomeView =()=>(
+  <div>
+  <img src={logo} className="App-logo"/>  
   <h1>Aqui tendremos algunas Noticias...</h1>
+  </div>
 )
 
 const Desarrollo =()=>(
@@ -28,7 +31,7 @@ const Login=()=>(
   <div>
   <h1>Autenticacion al Portal BizFin</h1>
   <p>
- Introduzca el usuario y contraseña
+     Introduzca el usuario y contraseña
   </p>
 
   <form onSubmit={this.onSearch}>
@@ -51,13 +54,18 @@ class App extends Component {
     const { value } = this.input;
     console.log(value)
     this.setState({flag:1});
+    fetch('http://nodebiz.azurewebsites.net/cont/cuentas?plan=cuenta&ta=ac')
+      .then(response => response.json())
+      .then(result => this.onSetResult(result, value));
     if (value === '') {
       return;
     }
-   this.render();
-    //fetch('https://hn.algolia.com/api/v1/search?query=' + value)
-    //  .then(response => response.json())
-    //  .then(result => this.onSetResult(result));
+ //https://carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
+  }
+  onSetResult = (result, key) => {
+    console.log(result)
+    //localStorage.setItem(key, JSON.stringify(result.hits));
+    //this.setState({ hits: result.hits });
   }
   render() {
     console.log("render...")
