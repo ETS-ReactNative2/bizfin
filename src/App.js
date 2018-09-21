@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MapBiz from './components/map';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/css/bootstrap-theme.css'
 import { Navbar,Nav,NavItem,NavDropdown,MenuItem} from 'react-bootstrap'
@@ -14,8 +15,9 @@ import TipoAuxi from './components/tipo'
 import Cuentas from './components/cuentas'
 import Auxiliares from './components/auxiliares'
 import logo from './logo.png';
+import biz1 from './biz1.png';
 import './App.css';
-
+//
 const HomeView =()=>(
   <div>
   <img src={logo} className="App-logo"/>  
@@ -27,61 +29,75 @@ const Desarrollo =()=>(
   <h1>En Desarrollo</h1>
 )
 //https://www.robinwieruch.de/local-storage-react/
-const Login=()=>(
-  <div>
-  <h1>Autenticacion al Portal BizFin</h1>
-  <p>
-     Introduzca el usuario y contraseña
-  </p>
 
-  <form onSubmit={this.onSearch}>
-    <input type="text" ref={node => this.input = node} />
-    <button type="submit">Click</button>
-  </form>
-  </div>
-)
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       flag:0,
-      config:{ip:"111.111.111.11"} };
+      config:null };
   }
   
   onSearch = (e) => {
+    alert('The value is: ' + this.login.value+'  '+this.pwd.value);
     console.log("onSearch")
     e.preventDefault();
-    const { value } = this.input;
+    const { value } = this.login;
     console.log(value)
     this.setState({flag:1});
-    fetch('http://nodebiz.azurewebsites.net/cont/cuentas?plan=cuenta&ta=ac')
+    fetch('http://nodebiz.azurewebsites.net/autenticacion')
       .then(response => response.json())
       .then(result => this.onSetResult(result, value));
     if (value === '') {
       return;
     }
+    //https://www.robinwieruch.de/local-storage-react/
  //https://carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
   }
   onSetResult = (result, key) => {
     console.log(result)
+    result.server="serverip"
+    result.user="userrrrrr"
+    result.password="password"
+    result.ip="xxx.xxx.xxx.xxx"
+    result.pwd="pppaaawwwwd"
+    alert(JSON.stringify(result))
     //localStorage.setItem(key, JSON.stringify(result.hits));
-    //this.setState({ hits: result.hits });
+    this.setState({ hits: result.hits });
+    this.setState({ flag:1 });
   }
   render() {
+    
+  
     console.log("render...")
     
     console.log(this.state)
     if (this.state.flag===0){
       return(
-        <div>
-        <img src={logo} className="App-logo"/>  
-        <h1>Autenticacion al Portal BizFin</h1>
-        <p>
-       Introduzca el usuario y contraseña
-        </p>
+       
+        <div className= "App">
+           <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />          
+          <h1 className="App-title">BizAccount  su Constructor de Cuentas y Costos de Obras </h1>
+        </header>  
+        
+        
       
+        
+        <table><tr>
+        <td><MapBiz></MapBiz></td><td> <img src={biz1} className="App-Biz" alt="logo" /> </td>
+        </tr></table>
+        <h2>Autenticacion al Portal BizFin</h2>
+        
         <form onSubmit={this.onSearch}>
-          <input type="text" ref={node => this.input = node} />
+        <label>
+          Usuario:
+          <input type="text" ref={login => this.login = login} />
+          </label>
+          <label>
+          Password:
+          <input type="text" ref={pwd => this.pwd = pwd} />
+          </label>
           <button type="submit">Click</button>
         </form>
         </div>
@@ -162,7 +178,7 @@ class App extends Component {
    <Route  path="/auxiliares" component={Auxiliares} />
    <Route  path="/diario" component={Desarrollo}/>
    <Route  path="/procesos" component={Desarrollo}/>
-   <Route  path="/login" component={Login}/>
+   <Route  path="/login" component={Desarrollo}/>
 
      </div>
      </Router>

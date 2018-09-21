@@ -1,0 +1,16 @@
+{"proyectos":
+    [{"id":0,"nombre":"Paraguay","latlng":[-56.826617,-25.275251]},
+    {"id":1,"nombre":"Uruguay","latlng":[-55.190540,-34.080318]},
+    {"id":2,"nombre":"Dominica","latlng":[-69.5444,18.61064]},
+    {"id":3,"nombre":"Costa Rica","latlng":[-83.548,10.018]},
+    
+    {"id":4,"nombre":"Panama","latlng":[-78.92,9.00]},
+    {"id":5,"nombre":"Nueva Esparta","latlng":[-63.96,11.02173]},
+    {"id":6,"nombre":"Puerto la Cruz","latlng":[-66.49606,10.19273]},
+    {"id":7,"nombre":"Merida","latlng":[-71.02,8.53]},
+    {"id":8,"nombre":"Barquisimeto","latlng":[-69.21,10.08]},
+    {"id":9,"nombre":"Maracay","latlng":[-67.60,10.27]},
+    {"id":9,"nombre":"Valencia","latlng":[-68.08,10.11]},
+    {"id":9,"nombre":"Ciudad Guayana","latlng":[-62.60,8.38]}
+]
+}
