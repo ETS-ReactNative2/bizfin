@@ -19,7 +19,7 @@ import {
   ColumnChooser
 } from "@devexpress/dx-react-grid-bootstrap3";
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/css/bootstrap-theme.css'
+//import 'bootstrap/dist/css/bootstrap-theme.css'
 //import "@devexpress/dx-react-grid-bootstrap3/dist/dx-react-grid-bootstrap3.css";
 import {tipo} from '../data/tipo.json';
 

@@ -1,33 +1,37 @@
 import React, { Component } from 'react';
+import BizAccount from './components/bizaccount';
 import MapBiz from './components/map';
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/css/bootstrap-theme.css'
-import { Navbar,Nav,NavItem,NavDropdown,MenuItem} from 'react-bootstrap'
+//import 'bootstrap/dist/css/bootstrap.css'
+//import 'bootstrap/dist/css/bootstrap-theme.css'
+
+import { Navbar,Nav,NavItem,NavDropdown,MenuItem,NavbarBrand} from 'react-bootstrap'
 //import {Navbar,Nav,NavItem} from 'react-bootstrap'
 import {BrowserRouter as Router, Route,Link,Switch} from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap'
 import {Grid,Table,TableHeaderRow,TableTreeColumn,PagingPanel,TableColumnResizing,Toolbar, TableColumnVisibility,ColumnChooser
 } from "@devexpress/dx-react-grid-bootstrap3";
-
+import {productos} from './data/productos.json';
 import TreeBal from './components/balance'
 import MayAna from './components/mayana'
 import TipoAuxi from './components/tipo'
 import Cuentas from './components/cuentas'
 import Auxiliares from './components/auxiliares'
 import logo from './logo.png';
-import biz1 from './biz1.png';
+
 import './App.css';
 //
+//https://www.coursera.org/lecture/front-end-react/exercise-video-header-and-footer-7abwF
 const HomeView =()=>(
   <div>
   <img src={logo} className="App-logo"/>  
   <h1>Aqui tendremos algunas Noticias...</h1>
   </div>
 )
-
+const trama="3083,fuentes,72,1,server=206.72.117.220;driver={sql server};uid=fuentes2015log;pwd=fuentes2015pwd123$;database=fuentes2015;,FUENTES2015,http://Bizaccount.net/Biz2015/PreHome.asp,"
 const Desarrollo =()=>(
   <h1>En Desarrollo</h1>
 )
+
 //https://www.robinwieruch.de/local-storage-react/
 
 class App extends Component {
@@ -35,11 +39,13 @@ class App extends Component {
     super(props);
     this.state = { 
       flag:0,
+      productos:productos,
       config:null };
   }
   
   onSearch = (e) => {
     alert('The value is: ' + this.login.value+'  '+this.pwd.value);
+    this.refs.myForm.submit();
     console.log("onSearch")
     e.preventDefault();
     const { value } = this.login;
@@ -55,6 +61,7 @@ class App extends Component {
  //https://carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
   }
   onSetResult = (result, key) => {
+    
     console.log(result)
     result.server="serverip"
     result.user="userrrrrr"
@@ -65,30 +72,35 @@ class App extends Component {
     //localStorage.setItem(key, JSON.stringify(result.hits));
     this.setState({ hits: result.hits });
     this.setState({ flag:1 });
+   
   }
+  
   render() {
     
   
     console.log("render...")
     
     console.log(this.state)
+    //3083,fuentes,72,1,server=206.72.117.220;driver={sql server};uid=fuentes2015log;pwd=fuentes2015pwd123$;database=fuentes2015;,FUENTES2015,http://Bizaccount.net/Biz2015/PreHome.asp,
     if (this.state.flag===0){
       return(
-       
+   
         <div className= "App">
-           <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />          
-          <h1 className="App-title">BizAccount  su Constructor de Cuentas y Costos de Obras </h1>
-        </header>  
         
-        
-      
-        
-        <table><tr>
-        <td><MapBiz></MapBiz></td><td> <img src={biz1} className="App-Biz" alt="logo" /> </td>
-        </tr></table>
+         <Navbar dark color="primary">
+          <div className="container">
+          <img src={logo} className="App-logo" alt="logo" />   
+            <NavbarBrand href="/">BizAccount su Constructor de Cuentas y Costos de Obras </NavbarBrand>
+          </div>
+        </Navbar>
+           <BizAccount productos={this.state.productos}></BizAccount>
         <h2>Autenticacion al Portal BizFin</h2>
         
+        <form ref='myForm' name="t" id="t" action="http://bizaccount.net/Biz2015/PreHome.asp" method="post" > 
+           <input type="hidden" name="trama" value="3083,fuentes,72,1,server=206.72.117.220;driver={sql server};uid=fuentes2015log;pwd=fuentes2015pwd123$;database=fuentes2015;,FUENTES2015,http://Bizaccount.net/Biz2015/PreHome.asp," />
+           <input type="Submit" />
+       </form>
+
         <form onSubmit={this.onSearch}>
         <label>
           Usuario:
@@ -100,6 +112,11 @@ class App extends Component {
           </label>
           <button type="submit">Click</button>
         </form>
+        
+           <header className="App-header">
+                    
+          <h3 className="App-title">Quienes Somos</h3>
+        </header>  
         </div>
       )
     }else{
@@ -189,3 +206,17 @@ class App extends Component {
 
 export default App;
 //<TreeBal></TreeBal>
+/*
+https://www.reddit.com/r/reactjs/comments/5x6kku/how_do_i_post_form_data_and_redirect_to_handler/
+handler = (e) => {
+    // do some validation
+    this.refs.myForm.submit();
+};
+
+const Form = () => (
+   <form ref='myForm' action='/other-page.html'>
+   <input id="foo" type="text">
+  <input type="Submit" />
+  </form>
+);
+*/
