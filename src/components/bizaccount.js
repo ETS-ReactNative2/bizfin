@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar,NavbarBrand,Media } from 'reactstrap';
+import { Navbar,NavbarBrand,Media,Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle } from 'reactstrap';
 import logo from '../logo.png';
 import MapBiz from '../components/map';
 import biz1 from '../assets/images/biz1.png';
@@ -16,16 +16,15 @@ class BizAccount extends React.Component {
   render() {
     const menu = this.props.productos.map((producto) => {
       return (
-        <div key={producto.id} className="col-12 mt-5">
-          <Media tag="li">
-            <Media left middle>
-                <Media object src={producto.image} alt={producto.name} />
-            </Media>
-            <Media body className="ml-5">
-              <Media heading>{producto.name}</Media>
-              <p>{producto.description}</p>
-            </Media>
-          </Media>
+        <div key={producto.id} className="col-12 col-md-5 m-1">
+          <Card tag="li">
+           
+                <CardImg width="100%" src={producto.image} alt={producto.name} />
+                <CardImgOverlay>
+                     <CardTitle>{producto.name}</CardTitle>
+                </CardImgOverlay>
+            
+          </Card>
         </div>
       );
   });
@@ -35,9 +34,9 @@ class BizAccount extends React.Component {
        
       <div className="container">
             <div className="row">
-              <Media list>
+              
                   {menu}
-              </Media>
+             
             </div>      
       </div>
          
