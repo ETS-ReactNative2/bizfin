@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Navbar,NavbarBrand,Media,Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle } from 'reactstrap';
-import logo from '../logo.png';
-import MapBiz from '../components/map';
 
+import MapBiz from '../components/map';
+import Footer from '../components/footer';
 class BizAccount extends React.Component {
   constructor(props) {
     super(props);
@@ -28,17 +28,13 @@ class BizAccount extends React.Component {
       );
   });
     return (
-      <div >      
+            
       <div className="container">
             <div className="row">              
                   {menu}             
             </div> 
             <MapBiz></MapBiz>     
-      </div>
-
-
-
-     
+            <Footer></Footer>
       </div>
       );
     }

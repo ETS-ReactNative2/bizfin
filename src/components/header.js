@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
-import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem, Jumbotron }
+import { Navbar, NavbarBrand,Nav,NavbarToggler,Collapse,NavItem, Jumbotron,NavDropdown }
  from 'reactstrap';
+ import { MenuItem} from 'react-bootstrap'
  import {NavLink} from 'react-router-dom'
+ import {LinkContainer} from 'react-router-bootstrap'
 import logo from '../logo.png';
 class Header extends Component {
   render() {
     return(
     <React.Fragment>
-      <Navbar dark expand="md">
-        <div className="container">
+      <Navbar inverse expand="md">
                   
             <NavbarBrand className="mr-auto" href="/">
              <img src={logo} height="30" alt="Plataforma BizAccount" />  
             </NavbarBrand>
+            
             <Nav navbar>
               <NavItem>
                   <NavLink className="nav-link" to="/home">
@@ -40,18 +42,9 @@ class Header extends Component {
             </Nav>
           
             
-        </div>
+           
       </Navbar>
-      <Jumbotron>
-           <div className="container">
-               <div className="row row-header">
-                   <div className="col-12 col-sm-6">
-                       <h1>Sistemas BizAccount</h1>
-                       <p>Mas de 200 annos construyendo una app</p>
-                   </div>
-               </div>
-           </div>
-       </Jumbotron>
+      
     </React.Fragment>
     );
   }

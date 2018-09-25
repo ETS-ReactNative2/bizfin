@@ -33,7 +33,7 @@ const HomeView =()=>(
   <h1>Aqui tendremos algunas Noticias...</h1>
   </div>
 )
-const trama="3083,fuentes,72,1,server=206.72.117.220;driver={sql server};uid=fuentes2015log;pwd=fuentes2015pwd123$;database=fuentes2015;,FUENTES2015,http://Bizaccount.net/Biz2015/PreHome.asp,"
+   
 const Desarrollo =()=>(
   <h1>En Desarrollo</h1>
 )
@@ -56,7 +56,6 @@ class Main extends Component {
       <div>bizzz</div>
       )
     }
-    //3083,fuentes,72,1,server=206.72.117.220;driver={sql server};uid=fuentes2015log;pwd=fuentes2015pwd123$;database=fuentes2015;,FUENTES2015,http://Bizaccount.net/Biz2015/PreHome.asp,
     if (this.state.flag===0){
       return(
   
@@ -74,7 +73,7 @@ class Main extends Component {
             </Switch>
            
           
-           <Footer></Footer>
+           
            </div>
         </Router>
         
