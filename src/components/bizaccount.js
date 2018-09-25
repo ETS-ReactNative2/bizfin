@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Navbar,NavbarBrand,Media,Card,CardImg,CardImgOverlay,CardText,CardBody,CardTitle } from 'reactstrap';
 import logo from '../logo.png';
 import MapBiz from '../components/map';
-import biz1 from '../assets/images/biz1.png';
 
 class BizAccount extends React.Component {
   constructor(props) {
@@ -29,21 +28,18 @@ class BizAccount extends React.Component {
       );
   });
     return (
-      <div >
-       
-       
+      <div >      
       <div className="container">
-            <div className="row">
-              
-                  {menu}
-             
-            </div>      
+            <div className="row">              
+                  {menu}             
+            </div> 
+            <MapBiz></MapBiz>     
       </div>
-         
-          <table><tr>
-        <td><MapBiz></MapBiz></td><td> <img src={biz1} className="App-Biz" alt="logo" /> </td>
-        </tr></table>
-          </div>
+
+
+
+     
+      </div>
       );
     }
   }

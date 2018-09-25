@@ -3,7 +3,7 @@
 //https://codeburst.io/learn-understand-javascripts-map-function-ffc059264783
 //npm start
 import React from "react";
-import { render } from "react-dom";
+
 import {
   DataTypeProvider,
   TreeDataState,

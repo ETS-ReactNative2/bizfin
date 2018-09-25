@@ -37,7 +37,7 @@ class MapBiz extends Component {
           style={"mapbox://styles/mapbox/light-v9"}
           center={centro} 
           zoom={zoom}
-          containerStyle={{height: "50vh",width: "40vw"}}
+          containerStyle={{height: "50vh",width: "80vw"}}
 
           >
            <Layer
@@ -46,11 +46,6 @@ class MapBiz extends Component {
              layout={{ "icon-image": "marker-15" }}>            
                {features}
           </Layer>
-          
-          
-                
-     
-
           </Map>
           </div>
         )    

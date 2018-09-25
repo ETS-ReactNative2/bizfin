@@ -7,6 +7,8 @@
     "@devexpress/dx-react-grid": "^1.7.2",
     "@devexpress/dx-react-grid-bootstrap3": "^1.7.2",
     "bootstrap": "^4.1.1",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.3.2",
