@@ -29,8 +29,10 @@ class Header extends Component {
             <NavbarBrand className="mr-auto" href="/">
              <img src={logo} height="30" alt="Plataforma BizAccount" />  
             </NavbarBrand> 
-            <Collapse isOpen={this.state.isNavOpen} navbar>           
+            <Collapse isOpen={this.state.isNavOpen} navbar>
+            
             <Nav navbar>
+            
               <NavItem>
                   <NavLink className="nav-link" to="/home">
                   <span className="fa fa-home"></span>Home
@@ -63,7 +65,9 @@ class Header extends Component {
                   </NavLink>
 
               </NavItem>
+                         
             </Nav>
+            
             </Collapse>
             
             </div>      
