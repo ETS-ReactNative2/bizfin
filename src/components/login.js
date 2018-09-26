@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Jumbotron }  from 'reactstrap';
+ 
 //import 'font-awesome/css/font-awesome.css';
 //import 'bootstrap-social/bootstrap-social.css';
 
@@ -47,6 +49,7 @@ class Login extends Component {
       }
   render() {
  
+
         <form onSubmit={this.onSearch}>
         <label>
           Usuario:
@@ -59,10 +62,16 @@ class Login extends Component {
           <button type="submit">Click</button>
         </form>
         
-           <header className="App-header">
-                    
-          <h3 className="App-title">Quienes Somos</h3>
-        </header>
+        <Jumbotron>
+           <div  dark className="container">
+               <div className="row row-header">
+                   <div className="col-12 col-sm-6">
+                       <h1>Instrucciones de Uso</h1>
+                       <p>Una vez registrado podra...</p>
+                   </div>
+               </div>
+           </div>
+       </Jumbotron>
         </div>
     );
   }
