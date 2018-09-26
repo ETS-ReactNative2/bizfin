@@ -33,7 +33,7 @@ class BizAccount extends React.Component {
             <div className="row">              
                   {menu}             
             </div> 
-            <MapBiz></MapBiz>     
+              
             <Footer></Footer>
       </div>
       );

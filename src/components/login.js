@@ -46,15 +46,7 @@ class Login extends Component {
        
       }
   render() {
-    return(
-        <div>
-        <h2>Autenticacion al Portal BizFin</h2>
-        
-        <form ref='myForm' name="t" id="t" action="http://bizaccount.net/Biz2015/PreHome.asp" method="post" > 
-           <input type="hidden" name="trama" value="3083,fuentes,72,1,server=206.72.117.220;driver={sql server};uid=fuentes2015log;pwd=fuentes2015pwd123$;database=fuentes2015;,FUENTES2015,http://Bizaccount.net/Biz2015/PreHome.asp," />
-           <input type="Submit" />
-       </form>
-
+ 
         <form onSubmit={this.onSearch}>
         <label>
           Usuario:

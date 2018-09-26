@@ -20,6 +20,7 @@ import MayAna from '../components/mayana'
 import TipoAuxi from '../components/tipo'
 import Cuentas from '../components/cuentas'
 import Auxiliares from '../components/auxiliares'
+import About from '../components/about'
 import logo from '../logo.png';
 
 
@@ -68,7 +69,8 @@ class Main extends Component {
                 <Route path="/tipoauxiliares" component={TipoAuxi}/>
                 <Route path="/cuentas" component={Cuentas}/>
                 <Route path="/auxiliares" component={Auxiliares}/>
-
+                <Route path="/login" component={Login}/>
+                <Route path="/about" component={About}/>
                 <Redirect to="/home"/>
             </Switch>
            
