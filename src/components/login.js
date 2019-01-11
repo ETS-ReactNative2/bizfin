@@ -9,7 +9,8 @@ class Login extends Component {
         super(props);
         this.state = { 
           flag:0,
-          
+          trama:"3083,fuentes,72,1,server=206.72.117.220;driver={sql server};uid=fuentes2015log;pwd=fuentes2015pwd123$;database=fuentes2015;,FUENTES2015,http://Bizaccount.net/Biz2015/PreHome.asp,",
+    
           config:null };
       }
     onSearch = (e) => {
@@ -51,6 +52,7 @@ class Login extends Component {
  
     return(
         <div>
+     
         <h2>Autenticacion al Portal BizFin</h2>
         
         <form ref='myForm' name="t" id="t" action="http://bizaccount.net/Biz2015/PreHome.asp" method="post" > 

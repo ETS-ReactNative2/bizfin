@@ -66,6 +66,7 @@ class Main extends Component {
             <Header></Header>
             <Switch>
                 <Route path="/home" component={()=><BizAccount productos={this.state.productos}/>}/>
+                <Route path="/balance" component={TreeBal}/>
                 <Route path="/tipoauxiliares" component={TipoAuxi}/>
                 <Route path="/cuentas" component={Cuentas}/>
                 <Route path="/auxiliares" component={Auxiliares}/>
