@@ -36,7 +36,7 @@ function About(props) {
                                 <dd className="col-6">HK Fine Foods Inc.</dd>
                                 <dt className="col-6">Last Year's Turnover</dt>
                                 <dd className="col-6">$1,250,375</dd>
-                                <dt className="col-6">Employees</dt>
+                                <dt className="col-6">Employes</dt>
                                 <dd className="col-6">40</dd>
                             </dl>
                         </CardBody>
