@@ -28,13 +28,24 @@ class BizAccount extends React.Component {
       );
   });
     return (
-            
+      <div>
+      <div  className="col-12 col-md-5 m-1">
+      <Card tag="li">
+       
+            <CardImg width="100%" src={'assets/images/biz1.png'} alt={producto.name} />
+            <CardImgOverlay>
+                 <CardTitle>{"producto.name"}</CardTitle>
+            </CardImgOverlay>
+        
+      </Card>
+    </div>
       <div className="container">
             <div className="row">              
                   {menu}             
             </div> 
               
             <Footer></Footer>
+      </div>
       </div>
       );
     }
