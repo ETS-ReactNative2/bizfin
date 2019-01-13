@@ -2,6 +2,7 @@
   "name": "bizfin",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://farosanroman.github.io/bizfin/",
   "dependencies": {
     "@devexpress/dx-react-core": "^1.7.2",
     "@devexpress/dx-react-grid": "^1.7.2",
@@ -9,6 +10,7 @@
     "bootstrap": "^4.1.1",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^2.0.1",
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.3.2",
@@ -24,6 +26,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   }
 }
