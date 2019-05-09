@@ -32,7 +32,7 @@
                 {
                     "id": 4,
                     "name":"Producto 1",
-                    "image": "assets/images/biz4.png",
+                    "image": "../assets/images/biz4.png",
                     "category": "mains",
                     "label":"Hot",
                     "price":"4.99",
