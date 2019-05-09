@@ -14,8 +14,6 @@ import {BrowserRouter as Router, Route,Link,Switch} from 'react-router-dom'
 import './App.css';
 //
 //npm start
-////
-
 
 //https://www.robinwieruch.de/local-storage-react/
 
